@@ -1,4 +1,5 @@
 FROM ubuntu:14.04
+MAINTAINER ChangZhuo Chen (陳昌倬) <czchen@appier.com>
 
 ENV WORKDIR=/srv
 
