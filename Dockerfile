@@ -9,7 +9,7 @@ RUN dpkg -i ${WORKDIR}/packages/*.deb
 RUN sed -i '1s/^/daemon off;\n/' /usr/local/openresty/nginx/conf/nginx.conf
 
 RUN apt-get update && \
-    apt-get install -qq supervisor && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -qq supervisor && \
     apt-get clean
 
 EXPOSE 80
