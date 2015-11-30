@@ -15,6 +15,8 @@ RUN apt-get update && \
         supervisor \
     && apt-get clean
 
+RUN cp ${WORKDIR}/logrotate/openresty /etc/logrotate.d/
+
 EXPOSE 80
 
 CMD /usr/bin/supervisord -c ${WORKDIR}/supervisor/supervisord.conf
